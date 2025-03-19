@@ -1,3 +1,4 @@
+package lianoJavier;
 
 public class Tablero {
 

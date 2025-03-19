@@ -1,3 +1,4 @@
+package lianoJavier;
 import java.util.Scanner;
 
 public class Jugador {
