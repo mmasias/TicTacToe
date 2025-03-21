@@ -6,6 +6,10 @@ public class Coordenada {
 
     private int fila;
     private int columna;
+    private final int FILA_MINIMA = 0;
+    private final int FILA_MAXIMA = 3;
+    private final int COLUMNA_MINIMA = 0;
+    private final int COLUMNA_MAXIMA = 3;
 
     public Coordenada() {
 
@@ -37,7 +41,7 @@ public class Coordenada {
     }
 
     public boolean esValida() {
-        return fila >= 0 && fila < 3 && columna >= 0 && columna < 3;
+        return fila >= FILA_MINIMA && fila < FILA_MAXIMA && columna >= COLUMNA_MINIMA && columna < COLUMNA_MAXIMA;
     }
 
     public void pedir() {
