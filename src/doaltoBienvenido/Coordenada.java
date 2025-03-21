@@ -62,8 +62,6 @@ public class Coordenada {
         } else {
             System.out.println("Cordenada Invalida");
         }
-        
-        scanner.close();
     }
 
 }
