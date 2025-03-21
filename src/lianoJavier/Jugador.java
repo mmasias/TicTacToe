@@ -18,9 +18,8 @@ public class Jugador {
         }
 
         public Coordenada getJugada(Tablero tablero) {
-                Coordenada jugada = new Coordenada(0,0);
-                jugada.setFila(jugada.pedir(tablero, new int[]{COORDENADA_BASE[0], tablero.getFilas()}));
-                jugada.setColumna(jugada.pedir(tablero, new int[]{COORDENADA_BASE[1], tablero.getColumnas()}));
+                Coordenada jugada = new Coordenada();
+                jugada.pedir();
                 return jugada;
         }
 

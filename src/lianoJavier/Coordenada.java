@@ -14,6 +14,11 @@ public class Coordenada {
                 this.columna = columna;
         }
 
+        public Coordenada() {
+                this.fila = 0;
+                this.columna = 0;
+        }
+
         public int getFila() {
                 return fila;
         }
@@ -28,17 +33,6 @@ public class Coordenada {
 
         public void setColumna(int columna) {
                 this.columna = columna;
-        }
-
-        public int pedir(Tablero tablero, int[] rango) {
-                int coordenada;
-                boolean isCoordenadaFueraDeRango;
-                do {
-                        coordenada = preguntarInt("Introduce la fila: ");
-                        isCoordenadaFueraDeRango = coordenada < rango[0] || coordenada >= rango[1];
-                        if (isCoordenadaFueraDeRango) System.out.println("Fila incorrecta. Debe ser entre 1 y " + (tablero.getFilas()));
-                } while (isCoordenadaFueraDeRango);
-                return coordenada;
         }
 
         public void pedir() {
