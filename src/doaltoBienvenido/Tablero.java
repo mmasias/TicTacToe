@@ -15,7 +15,7 @@ public class Tablero {
     }
 
     public void mostrar() {
-        cleanScreen();
+        limpiarPantalla();
         for (int i = 0; i < casillas.length; i++) {
             for (int j = 0; j < casillas[i].length; j++) {
                 System.out.print(" " + casillas[i][j]);
@@ -24,7 +24,7 @@ public class Tablero {
         }
     }
 
-    private void cleanScreen() {
+    private void limpiarPantalla() {
         for (int i = 0; i < 100; i++) {
             System.out.println();
         }
