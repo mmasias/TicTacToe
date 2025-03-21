@@ -41,6 +41,12 @@ public class Coordenada {
                 return coordenada;
         }
 
+        public void pedir() {
+                System.out.println("Introduce la fila y la columna donde quieres poner la ficha");
+                fila = preguntarInt("Fila: ");
+                columna = preguntarInt("Columna: ");
+        }
+
         private int preguntarInt(String string) {
                 System.out.print(string);
                 return scanner.nextInt() - 1;
