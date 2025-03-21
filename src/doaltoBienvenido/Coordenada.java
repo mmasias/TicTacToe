@@ -46,8 +46,7 @@ public class Coordenada {
 
     public void pedir() {
         Scanner scanner = new Scanner(System.in);
-
-        boolean esCordenadaValida = false;
+        boolean esCordenadaValida;
 
         do {
             System.out.println("Escriba una fila desde (0-2): ");
@@ -55,13 +54,11 @@ public class Coordenada {
 
             System.out.println("Escriba una columna desde (0-2): ");
             columna = scanner.nextInt();
+
+            esCordenadaValida = esValida();
+            if (!esCordenadaValida) {
+                System.out.println("Coordenada incorrecta");
+            }
         } while (!esCordenadaValida);
-
-        if (esValida()) {
-            esCordenadaValida = true;
-        } else {
-            System.out.println("Cordenada Invalida");
-        }
     }
-
 }
