@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class Jugador {
 
+        final int[] COORDENADA_BASE = {0,1};
+
         private String nombre;
         private int simbolo;
         private int fichasEnMano;
@@ -18,23 +20,20 @@ public class Jugador {
         }
 
         public Coordenada getJugada(Tablero tablero) {
-                int Fila;
-                boolean isFilaFueraDeRango;
-                do {
-                        Fila = preguntarInt("Introduce la fila: ");
-                        isFilaFueraDeRango = Fila < 0 || Fila >= tablero.getFilas();
-                        if (isFilaFueraDeRango) System.out.println("Fila incorrecta. Debe ser entre 1 y " + (tablero.getFilas()));
-                } while (isFilaFueraDeRango);
+                int fila = pedirCoordenada(tablero, new int[]{COORDENADA_BASE[0],tablero.getFilas()});
+                int columna = pedirCoordenada(tablero, new int[]{COORDENADA_BASE[1],tablero.getFilas()});
+                return new Coordenada(fila, columna);
+        }
 
-                int Columna;
-                boolean isColumnaFueraDeRango;
+        private int pedirCoordenada(Tablero tablero, int[] rango) {
+                int coordenada;
+                boolean isCoordenadaFueraDeRango;
                 do {
-                        Columna = preguntarInt("Introduce la columna: ");
-
-                        isColumnaFueraDeRango = Columna < 0 || Columna >= tablero.getColumnas();
-                        if (isColumnaFueraDeRango) System.out.println("Columna incorrecta. Debe ser entre 1 y " + (tablero.getColumnas()));
-                } while (isColumnaFueraDeRango);
-                return new Coordenada(Fila, Columna);
+                        coordenada = preguntarInt("Introduce la fila: ");
+                        isCoordenadaFueraDeRango = coordenada < rango[0] || coordenada >= rango[1];
+                        if (isCoordenadaFueraDeRango) System.out.println("Fila incorrecta. Debe ser entre 1 y " + (tablero.getFilas()));
+                } while (isCoordenadaFueraDeRango);
+                return coordenada;
         }
 
         private int preguntarInt(String string) {
