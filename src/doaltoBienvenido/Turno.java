@@ -5,7 +5,7 @@ public class Turno {
     private int turnoActual;
 
     public Turno(){
-        turnoActual = 0;
+        turnoActual = (int) (Math.random() * 2) ;
     }
 
     public void cambiar() {
