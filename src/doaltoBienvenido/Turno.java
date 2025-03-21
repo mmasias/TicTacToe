@@ -9,7 +9,7 @@ public class Turno {
     }
 
     public void cambiar() {
-        turnoActual =+1 % 2;
+        turnoActual = (turnoActual + 1) % 2;
     }
     
     public int leToca() {
