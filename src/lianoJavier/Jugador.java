@@ -1,14 +1,12 @@
 package lianoJavier;
-import java.util.Scanner;
 
 public class Jugador {
 
-        final int[] COORDENADA_BASE = {0,1};
+        final int[] COORDENADA_BASE = {0,0};
 
         private String nombre;
         private int simbolo;
         private int fichasEnMano;
-        private Scanner scanner = new Scanner(System.in);
 
         public Jugador(String nombre, int simbolo) {
                 this.nombre = nombre;
@@ -20,26 +18,13 @@ public class Jugador {
         }
 
         public Coordenada getJugada(Tablero tablero) {
-                int fila = pedirCoordenada(tablero, new int[]{COORDENADA_BASE[0],tablero.getFilas()});
-                int columna = pedirCoordenada(tablero, new int[]{COORDENADA_BASE[1],tablero.getFilas()});
-                return new Coordenada(fila, columna);
+                Coordenada jugada = new Coordenada(0,0);
+                jugada.setFila(jugada.pedir(tablero, new int[]{COORDENADA_BASE[0], tablero.getFilas()}));
+                jugada.setColumna(jugada.pedir(tablero, new int[]{COORDENADA_BASE[1], tablero.getColumnas()}));
+                return jugada;
         }
 
-        private int pedirCoordenada(Tablero tablero, int[] rango) {
-                int coordenada;
-                boolean isCoordenadaFueraDeRango;
-                do {
-                        coordenada = preguntarInt("Introduce la fila: ");
-                        isCoordenadaFueraDeRango = coordenada < rango[0] || coordenada >= rango[1];
-                        if (isCoordenadaFueraDeRango) System.out.println("Fila incorrecta. Debe ser entre 1 y " + (tablero.getFilas()));
-                } while (isCoordenadaFueraDeRango);
-                return coordenada;
-        }
 
-        private int preguntarInt(String string) {
-                System.out.print(string);
-                return scanner.nextInt() - 1;
-        }
 
         public int getFichasEnMano() {
                 return fichasEnMano;
