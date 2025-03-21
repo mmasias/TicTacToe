@@ -89,7 +89,7 @@ public class Tablero {
     }
 
     public boolean estaVacio(Coordenada coordenada) {
-        return casillas[coordenada.fila()][coordenada.columna()] == CASILLA_VACIA;
+        return casillas[coordenada.fila()][coordenada.columna()] = CASILLA_VACIA;
     }
 
 }
