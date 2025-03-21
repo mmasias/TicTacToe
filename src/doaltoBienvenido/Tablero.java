@@ -88,8 +88,8 @@ public class Tablero {
         casillas[coordenada.fila()][coordenada.columna()] = CASILLA_VACIA;
     }
 
-    public char estaVacio(Coordenada coordenada) {
-        return casillas[coordenada.fila()][coordenada.columna()] = CASILLA_VACIA;
+    public boolean estaVacio(Coordenada coordenada) {
+        return !estaOcupado(coordenada);
     }
 
 }
