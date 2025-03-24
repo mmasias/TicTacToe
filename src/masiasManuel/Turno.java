@@ -1,16 +1,20 @@
+class Turno {
 
-public class Turno {
+    private int valor;
 
-    public int leToca() {
-
+    public Turno() {
+        valor = (int) (Math.random() * 2);
     }
 
-    public void cambiar() {
-
+    public int leToca() {
+        return valor;
     }
 
     public int noLeToca() {
-
+        return (valor + 1) % 2;
     }
 
+    public void cambiar() {
+        valor = this.noLeToca();
+    }
 }
