@@ -1,3 +1,4 @@
+package v000;
 
 public class TresEnRaya {
 
@@ -5,7 +6,7 @@ public class TresEnRaya {
     private Jugador[] jugadores;
     private Turno turno;
 
-    public TresEnRaya(){
+    public TresEnRaya() {
         tablero = new Tablero();
         jugadores = new Jugador[2];
         jugadores[0] = new Jugador('x');
@@ -17,13 +18,13 @@ public class TresEnRaya {
 
         do {
             tablero.mostrar();
-            if (!tablero.estaCompleto(jugadores[turno.leToca()])){
+            if (!tablero.estaCompleto(jugadores[turno.leToca()])) {
                 jugadores[turno.leToca()].ponerFicha(tablero);
             } else {
                 jugadores[turno.leToca()].moverFicha(tablero);
             }
             turno.cambiar();
-        } while(!tablero.hayTresEnRaya());
+        } while (!tablero.hayTresEnRaya());
         jugadores[turno.noLeToca()].celebrar();
     }
 }

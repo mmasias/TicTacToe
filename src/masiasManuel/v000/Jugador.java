@@ -1,3 +1,4 @@
+package v000;
 
 public class Jugador {
 
@@ -11,15 +12,15 @@ public class Jugador {
         Coordenada coordenada = new Coordenada();
         do {
             coordenada.pedir();
-        } while(!coordenada.esValida() || tablero.estaOcupado(coordenada));
-        tablero.ponerFicha(coordenada,color);
+        } while (!coordenada.esValida() || tablero.estaOcupado(coordenada));
+        tablero.ponerFicha(coordenada, color);
     }
 
     public void moverFicha(Tablero tablero) {
         Coordenada coordenada = new Coordenada();
-        do{
+        do {
             coordenada.pedir();
-        } while(!coordenada.esValida() || tablero.estaVacio(coordenada));
+        } while (!coordenada.esValida() || tablero.estaVacio(coordenada));
         tablero.sacarFicha(coordenada);
         this.ponerFicha(tablero);
     }
