@@ -6,7 +6,7 @@ class TresEnRaya {
     private final int  FILAS = 3;
     private final int  COLUMNAS = 3;
 
-    public TresEnraya() {
+    public TresEnRaya() {
        this.tablero = new Tablero(FILAS, COLUMNAS);
        this.jugadores = new Jugadores(this.tablero.getTablero());
        this.reglas = new Reglas(this.tablero.getTablero());
@@ -24,7 +24,7 @@ class TresEnRaya {
 
     private void celebrar() {
         tablero.mostrar();
-        String celebrar = "Ha ganado el jugador con las fichas " + jugadores.getTurnoActual();
+        String celebrar = "Ha ganado el jugador con las fichas " + jugadores.getTurnoNoActual();
         System.out.println(celebrar);
     }
     

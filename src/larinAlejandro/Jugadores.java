@@ -1,4 +1,6 @@
-public class Jugadores{
+
+public class Jugadores {
+
     private final Jugador[] jugadores;
     private final char[][] tablero;
     private int turnoActual;
@@ -9,7 +11,7 @@ public class Jugadores{
             new Jugador('X', this.tablero),
             new Jugador('O', this.tablero)
         };
-        this.turnoActual = 0; 
+        this.turnoActual = turnoRandom();
     }
 
     public void juegan() {
@@ -25,12 +27,20 @@ public class Jugadores{
     }
 
     private void cambiarTurno() {
-        turnoActual = (turnoActual + 1) % 2; 
+        turnoActual = (turnoActual + 1) % 2;
     }
-    
+
+    private int turnoRandom() {
+        return turnoActual = (int) (Math.random() * 2);
+    }
+
     public char getTurnoActual() {
         return jugadores[turnoActual].getFicha();
     }
 
-}
+    public char getTurnoNoActual() {
+        cambiarTurno();
+        return getTurnoActual();
+    }
 
+}
