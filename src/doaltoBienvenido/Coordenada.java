@@ -6,6 +6,10 @@ public class Coordenada {
 
     private int fila;
     private int columna;
+    private final int FILA_MINIMA = 0;
+    private final int FILA_MAXIMA = 3;
+    private final int COLUMNA_MINIMA = 0;
+    private final int COLUMNA_MAXIMA = 3;
 
     public Coordenada() {
 
@@ -37,13 +41,12 @@ public class Coordenada {
     }
 
     public boolean esValida() {
-        return fila >= 0 && fila < 3 && columna >= 0 && columna < 3;
+        return fila >= FILA_MINIMA && fila < FILA_MAXIMA && columna >= COLUMNA_MINIMA && columna < COLUMNA_MAXIMA;
     }
 
     public void pedir() {
         Scanner scanner = new Scanner(System.in);
-
-        boolean esCordenadaValida = false;
+        boolean esCordenadaValida;
 
         do {
             System.out.println("Escriba una fila desde (0-2): ");
@@ -51,15 +54,11 @@ public class Coordenada {
 
             System.out.println("Escriba una columna desde (0-2): ");
             columna = scanner.nextInt();
+
+            esCordenadaValida = esValida();
+            if (!esCordenadaValida) {
+                System.out.println("Coordenada incorrecta");
+            }
         } while (!esCordenadaValida);
-
-        if (esValida()) {
-            esCordenadaValida = true;
-        } else {
-            System.out.println("Cordenada Invalida");
-        }
-        
-        scanner.close();
     }
-
 }
