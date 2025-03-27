@@ -1,4 +1,4 @@
-package JuegoTresEnRaya.delaasuncionJose;
+package delaasuncionJose;
 import java.util.Scanner;
 
 public class Coordenada {

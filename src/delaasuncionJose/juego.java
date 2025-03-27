@@ -1,4 +1,4 @@
-package JuegoTresEnRaya.delaasuncionJose;
+package delaasuncionJose;
 
 public class juego {
     public static void main(String[] args) {

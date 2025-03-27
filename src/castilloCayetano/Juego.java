@@ -1,4 +1,4 @@
-package TicTacToe.src;
+package castilloCayetano;
 
 class Juego {
     public static void main(String[] args) {

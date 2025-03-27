@@ -1,4 +1,4 @@
-package JuegoTresEnRaya.delaasuncionJose;
+package delaasuncionJose;
 
 public class TresEnRaya {
     private Tablero tablero;

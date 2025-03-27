@@ -1,4 +1,4 @@
-package TicTacToe.src;
+package castilloCayetano;
 
 public class Puntuacion {
 

@@ -1,4 +1,4 @@
-package TicTacToe.src;
+package castilloCayetano;
 
 public class JugadorMinimax extends Jugador {
     public JugadorMinimax(char color) {
