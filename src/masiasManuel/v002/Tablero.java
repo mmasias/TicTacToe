@@ -1,12 +1,11 @@
-package v000;
+package v002;
 
-class Tablero {
+public class Tablero {
 
     private char[][] casillas;
 
     public Tablero() {
         casillas = new char[3][3];
-
         for (int i = 0; i < casillas.length; i++) {
             for (int j = 0; j < casillas[i].length; j++) {
                 casillas[i][j] = '_';
@@ -15,7 +14,7 @@ class Tablero {
     }
 
     public void mostrar() {
-        cleanScreen();
+        limpiarPantalla();
         System.out.println("  1 2 3");
         for (int i = 0; i < casillas.length; i++) {
             System.out.print((i+1) + " ");
@@ -27,28 +26,23 @@ class Tablero {
         System.out.println();
     }
 
-    public void ponerFicha(Coordenada coordenada, char color) {
-        casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] = color;
+    public void ponerFicha(Ficha ficha) {
+        Coordenada coordenada = ficha.getCoordenada();
+        casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] = ficha.getColor();
     }
 
-    public void sacarFicha(Coordenada coordenada) {
+    public void sacarFicha(Ficha ficha) {
+        Coordenada coordenada = ficha.getCoordenada();
         casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] = '_';
+        ficha.retirarDeTablero();
     }
 
     public boolean estaOcupado(Coordenada coordenada) {
         return casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] != '_';
     }
-
-    public boolean estaCompleto(Jugador jugador) {
-        int conteoFichas = 0;
-        for (int i = 0; i < casillas.length; i++) {
-            for (int j = 0; j < casillas[i].length; j++) {
-                if (casillas[i][j] == jugador.color()) {
-                    conteoFichas++;
-                }
-            }
-        }
-        return conteoFichas == 3;
+    
+    public boolean estaOcupadoPor(Coordenada coordenada, char color) {
+        return casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] == color;
     }
 
     public boolean hayTresEnRaya() {
@@ -77,14 +71,15 @@ class Tablero {
         }
         return false;
     }
-
-    public boolean estaVacio(Coordenada coordenada) {
-        return !estaOcupado(coordenada);
+    
+    public char getGanador() {
+        if (hayTresEnRaya('x')) return 'x';
+        if (hayTresEnRaya('o')) return 'o';
+        return '_';
     }
 
-    static void cleanScreen() {
+    private void limpiarPantalla() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
-
 }

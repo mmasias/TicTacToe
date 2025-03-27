@@ -1,4 +1,4 @@
-package v000;
+package v002;
 
 public class TresEnRaya {
 
@@ -18,13 +18,9 @@ public class TresEnRaya {
 
         do {
             tablero.mostrar();
-            if (!tablero.estaCompleto(jugadores[turno.leToca()])) {
-                jugadores[turno.leToca()].ponerFicha(tablero);
-            } else {
-                jugadores[turno.leToca()].moverFicha(tablero);
-            }
+            jugadores[turno.leToca()].jugar(tablero);
             turno.cambiar();
-        } while (!tablero.hayTresEnRaya());
+        } while(!tablero.hayTresEnRaya());
         
         tablero.mostrar();
         jugadores[turno.noLeToca()].celebrar();

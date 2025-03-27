@@ -14,7 +14,9 @@ class Tablero {
 
     public void mostrar() {
         cleanScreen();
+        System.out.println("  1 2 3");
         for (int i = 1; i <= DIMENSION; i++) {
+            System.out.print((i+1) + " ");
             for (int j = 1; j <= DIMENSION; j++) {
                 System.out.print(this.getColor(new Coordenada(i, j)) + " ");
             }
