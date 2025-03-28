@@ -1,8 +1,8 @@
-# Variaciones alrededor del TresEnRaya OO
+# Variaciones alrededor del TicTacToe OO
 
 ## Requisitos
 
-El programa a resolver debe permitir a dos usuarios jugar el tres en raya
+El programa a resolver debe permitir a dos usuarios jugar el tic tac toe (tres en raya)
 
 <div align=center>
 
