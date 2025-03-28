@@ -1,4 +1,4 @@
-# TresEnRaya OO
+# Variaciones alrededor del TresEnRaya OO
 
 ## Requisitos
 
