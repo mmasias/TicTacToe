@@ -14,6 +14,13 @@ Las tres versiones muestran una progresión natural del pensamiento OO: desde mo
 
 |V000|v001|v002|
 |-|-|-|
+|[Juego](v000/Juego.java)      |[Juego](v001/Juego.java)      |[Juego](v002/Juego.java)      |
+|[TresEnRaya](v000/TresEnRaya.java) |[TresEnRaya](v001/TresEnRaya.java) |[TresEnRaya](v002/TresEnRaya.java) |
+|[Tablero](v000/Tablero.java)    |[Tablero](v001/Tablero.java)    |[Tablero](v002/Tablero.java)    |
+|[Jugador](v000/Jugador.java)    |[Jugador](v001/Jugador.java)    |[Jugador](v002/Jugador.java)    |
+|[Turno](v000/Turno.java)      |[Turno](v001/Turno.java)     |[Turno](v002/Turno.java)      |
+|[Coordenada](v000/Coordenada.java) |[Coordenada](v001/Coordenada.java) |[Coordenada](v002/Coordenada.java) |
+|           |           |[Ficha](v002/Ficha.java)      |
 |**Punto de partida intuitivo**: Refleja cómo la mayoría de personas pensaría inicialmente en el problema|**Experimentación con estructuras de datos**: Muestra cómo un cambio en la estructura de datos puede transformar radicalmente la implementación|**Aproximación al diseño basado en dominio**: Los objetos del código reflejan entidades del mundo real|
 |**Acceso directo a estado**: La matriz proporciona una vista inmediata del estado del juego|**Solución algorítmica innovadora**: El método `direccion()` representa un enfoque matemático elegante|**Mejor encapsulamiento de comportamiento**: Cada ficha conoce y gestiona su propio estado|
 |**Mayor cohesión de la clase Tablero**: Toda la lógica relacionada con el estado del juego está en un solo lugar|**Transición de modelo mental**: Comienza a considerar el juego como colecciones de piezas en lugar de un estado de tablero|**Modelo más escalable**: Preparado para posibles extensiones (como diferentes tipos de fichas)|
